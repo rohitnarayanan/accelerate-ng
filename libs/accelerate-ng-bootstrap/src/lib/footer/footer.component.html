@@ -1,0 +1,20 @@
+<footer
+  [id]="config.id"
+  class="bg-{{ config.bgColor }} {{ config.footerClass }}">
+  <div
+    class="container-fluid align-items-center position-relative d-flex"
+    [ngClass]="getContainerClass()">
+    @if (config.brand) {
+      <ang-brand [options]="config.brand" />
+    }
+    @if (config.copyright) {
+      <span class="text-muted ps-2" style="font-size: small">{{
+        config.copyright
+      }}</span>
+    }
+    <ang-navbar
+      [options]="config.navbar"
+      [template]="template()"
+      [class]="getMenuPosition()" />
+  </div>
+</footer>

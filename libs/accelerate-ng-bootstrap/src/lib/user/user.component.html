@@ -1,0 +1,22 @@
+<h4 class="page-header">
+  <i class="bi bi-person-{{ subpath === 'profile' ? 'lock' : 'gear' }}"></i>User
+  {{ subpath | titlecase }}
+</h4>
+
+<ang-alert />
+
+<div class="row mt-2">
+  @if (config.profile.enabled && subpath === 'profile') {
+    <ang-user-profile [profile]="userProfile" />
+  }
+  @if (config.settings.enabled && subpath === 'settings') {
+    <ang-user-settings />
+  }
+
+  <ang-button
+    type="button"
+    class="primary"
+    label="Ok"
+    additionalClasses="my-4 float-end me-4"
+    (onclick)="routeService.goBack()" />
+</div>

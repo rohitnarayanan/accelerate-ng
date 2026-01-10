@@ -1,0 +1,92 @@
+<!-- List View -->
+@if (manager().enableList()) {
+  <div
+    aria-label="List View"
+    [ngClass]="currentMode() === 'list' ? '' : 'd-none'">
+    <h4 class="text-center mt-2 mb-0 list-table-header">
+      {{ manager().pluralName }}
+    </h4>
+    <ang-table #listTable [options]="manager().tableOptions()" />
+  </div>
+}
+
+<!-- Add/Update View -->
+@if (manager().enableAddUpdate()) {
+  <div
+    aria-label="Add/Update View"
+    [ngClass]="currentMode() === 'addupdate' ? '' : 'd-none'">
+    <ang-form
+      #addUpdateForm
+      [template]="addUpdateFormTemplate()"
+      [options]="manager().addUpdateFormOptions()"
+      (formSubmit)="manager().submitAddUpdate()"
+      (formCancel)="manager().cancelAddUpdate()" />
+  </div>
+}
+
+<!-- Delete Confirm View -->
+@if (manager().enableDelete()) {
+  <div aria-label="Delete Confirm View">
+    <ang-modal
+      #deleteModal
+      id="delete"
+      [options]="manager().deleteModalOptions()"
+      [body]="deleteModalTemplate" />
+    <ng-template #deleteModalTemplate let-context>
+      <h5>
+        Are you sure you want to delete {{ context.count }}
+        {{ context.name }}(s)? This action cannot be undone.
+      </h5>
+    </ng-template>
+  </div>
+}
+
+<!-- Upload View -->
+@if (manager().enableUpload()) {
+  <div
+    aria-label="Upload View"
+    [ngClass]="currentMode() === 'upload' ? '' : 'd-none'"
+    class="text-center">
+    <ang-form
+      #uploadForm
+      [template]="uploadFormTemplate"
+      [options]="manager().uploadFormOptions()"
+      (formSubmit)="manager().submitUpload()"
+      (formCancel)="manager().cancelUpload()" />
+    <ng-template #uploadFormTemplate let-context>
+      <ang-input-field
+        type="file"
+        name="uploadFile"
+        label=""
+        [htmlAttributes]="{ accept: '.xlsx' }"
+        [formGroup]="context.formGroup" />
+    </ng-template>
+    <ang-button
+      type="button"
+      class="info"
+      icon="file-arrow-down"
+      label="Template"
+      (onclick)="manager().downloadTemplate(false)" />
+    <ang-button
+      type="button"
+      class="success"
+      icon="file-arrow-down"
+      label="Template (With Data)"
+      [additionalClasses]="'ms-2'"
+      (onclick)="manager().downloadTemplate(true)" />
+  </div>
+}
+
+<!-- Download View -->
+@if (manager().enableDownload()) {
+  <div
+    aria-label="Download View"
+    [ngClass]="currentMode() === 'download' ? '' : 'd-none'">
+    <ang-form
+      #downloadForm
+      [template]="downloadFormTemplate()"
+      [options]="manager().downloadFormOptions()"
+      (formSubmit)="manager().submitDownload()"
+      (formCancel)="manager().cancelDownload()" />
+  </div>
+}

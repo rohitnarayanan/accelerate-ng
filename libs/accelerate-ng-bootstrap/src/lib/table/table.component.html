@@ -1,0 +1,14 @@
+@if (config) {
+  <div id="table-toolbar">
+    @if (rendered) {
+      <div class="btn-group">
+        @for (btnConfig of config.toolbarButtons; track $index) {
+          <ang-button [options]="btnConfig" />
+        }
+      </div>
+    }
+  </div>
+  <div class="mt-2 table-responsive">
+    <table #table [angHtmlAttributes]="htmlAttributes()"></table>
+  </div>
+}

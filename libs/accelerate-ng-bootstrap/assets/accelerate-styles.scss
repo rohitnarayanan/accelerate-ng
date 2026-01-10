@@ -1,0 +1,83 @@
+/** global styles **/
+ul.navbar-nav {
+  /** navbar **/
+  li.nav-item {
+    a.nav-link {
+      cursor: pointer;
+    }
+  }
+
+  div.vr {
+    margin-top: 0.75rem;
+  }
+}
+
+i.bi {
+  /** icon **/
+  margin-right: 0.25rem; // add space between icons and text
+}
+
+div.btn-group {
+  /** button group **/
+  ang-button:not(:first-child) > .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  ang-button:not(:last-child) > .btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+/** global style for table as component level style do not apply to elements dynamically created by bootstrap-table **/
+/**  **/
+ang-table {
+  table.table {
+    thead {
+      font-size: smaller;
+
+      tr {
+        // th {
+        //     background-color: var(--bs-primary);
+        //     color: var(--bs-light);
+
+        //     // reduce padding around column name
+        //     div.th-inner {
+        //         padding: 0.4rem !important;
+        //     }
+        // }
+
+        // additional header rows
+        &:nth-child(n + 2) {
+          th {
+            background-color: var(--bs-secondary);
+            // color: var(--bs-dark);
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr.highlight-update {
+        @keyframes update-blinker {
+          100% {
+            --bs-table-bg: var(--bs-info);
+          }
+        }
+
+        animation: update-blinker 500ms linear 3;
+      }
+
+      tr.highlight-error {
+        @keyframes error-blinker {
+          100% {
+            --bs-table-bg: var(--bs-danger);
+          }
+        }
+
+        animation: error-blinker 500ms linear 3;
+      }
+    }
+  }
+}

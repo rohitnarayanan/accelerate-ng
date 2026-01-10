@@ -1,0 +1,11 @@
+:host {
+  cursor: default !important;
+}
+
+button.clear-btn {
+  font-size: x-small;
+  position: absolute;
+  right: 0.3rem;
+  top: 0.3rem;
+  z-index: 2;
+}
