@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rn-accelerate-ng/core": ["libs/accelerate-ng-core/src/index.ts"]
+      "@rn-accelerate-ng/core": ["libs/accelerate-ng-core/src/index.ts"],
+      "@rn-accelerate-ng/http": ["libs/accelerate-ng-http/src/index.ts"],
+      "@rn-accelerate-ng/http/crud": [
+        "libs/accelerate-ng-http/crud/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

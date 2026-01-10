@@ -178,6 +178,27 @@ importers:
         specifier: ~7.8.2
         version: 7.8.2
 
+  libs/accelerate-ng-http:
+    devDependencies:
+      '@angular/common':
+        specifier: ~21.0.8
+        version: 21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/core':
+        specifier: ~21.0.8
+        version: 21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2)
+      '@rn-accelerate-ng/core':
+        specifier: workspace:*
+        version: link:../accelerate-ng-core
+      '@types/jquery':
+        specifier: ^3.5.33
+        version: 3.5.33
+      jquery:
+        specifier: ^3.7.1
+        version: 3.7.1
+      rxjs:
+        specifier: ~7.8.2
+        version: 7.8.2
+
 packages:
 
   '@acemir/cssom@0.9.30':
