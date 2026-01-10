@@ -1,1 +1,7 @@
 autoInstallPeers: true
+packages:
+  - 'apps/**'
+  - 'libs/**'
+  - 'tools/**'
+  # exclude packages that are inside test directories
+  - '!**/test/**'
