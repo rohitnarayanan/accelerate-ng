@@ -19,7 +19,8 @@
       "@rn-accelerate-ng/http": ["libs/accelerate-ng-http/src/index.ts"],
       "@rn-accelerate-ng/http/crud": [
         "libs/accelerate-ng-http/crud/src/index.ts"
-      ]
+      ],
+      "@rn-accelerate-ng/auth": ["libs/accelerate-ng-auth/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -148,6 +148,39 @@ importers:
         specifier: ^4.0.8
         version: 4.0.16(@types/node@25.0.6)(jiti@2.6.1)(jsdom@27.4.0)(less@4.5.1)(sass-embedded@1.97.2)(sass@1.97.2)(terser@5.44.1)(yaml@2.8.2)
 
+  libs/accelerate-ng-auth:
+    devDependencies:
+      '@angular/common':
+        specifier: ~21.0.8
+        version: 21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/core':
+        specifier: ~21.0.8
+        version: 21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2)
+      '@angular/router':
+        specifier: ~21.0.8
+        version: 21.0.8(@angular/common@21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(@angular/platform-browser@21.0.8(@angular/common@21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2)))(rxjs@7.8.2)
+      '@rn-accelerate-ng/core':
+        specifier: workspace:*
+        version: link:../accelerate-ng-core
+      '@rn-accelerate-ng/http':
+        specifier: workspace:*
+        version: link:../accelerate-ng-http
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
+      build-url-ts:
+        specifier: ^6.2.0
+        version: 6.2.0
+      jwt-decode:
+        specifier: ^4.0.0
+        version: 4.0.0
+      lodash-es:
+        specifier: ^4.17.22
+        version: 4.17.22
+      rxjs:
+        specifier: ~7.8.2
+        version: 7.8.2
+
   libs/accelerate-ng-core:
     devDependencies:
       '@angular/common':
@@ -3955,6 +3988,9 @@ packages:
   buffer@6.0.3:
     resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
 
+  build-url-ts@6.2.0:
+    resolution: {integrity: sha512-bwF2Cytry4/QWshF9ukPtinIGgBUuqbjVVVv7mpk6gmUCi0tkTorE98/fmu76t+VF10kKDIL9S+bQt1/7z8KUA==}
+
   bundle-name@4.1.0:
     resolution: {integrity: sha512-tjwM5exMg6BGRI+kNmTntNsvdZS1X8BFYS6tnJ2hdH0kVxM6/eVZ2xy+FqStSWvYmtfFMDLIxurorHwDKfDz5Q==}
     engines: {node: '>=18'}
@@ -5755,6 +5791,10 @@ packages:
 
   jws@3.2.3:
     resolution: {integrity: sha512-byiJ0FLRdLdSVSReO/U4E7RoEyOCKnEnEPMjq3HxWtvzLsV08/i5RQKsFVNkCldrCaPr2vDNAOMsfs8T/Hze7g==}
+
+  jwt-decode@4.0.0:
+    resolution: {integrity: sha512-+KJGIyHgkGuIq3IEBNftfhW/LfWhXUIY6OmyVWjliu5KH1y0fw7VQ8YndE2O4qZdMSd9SqbnC8GOcZEy0Om7sA==}
+    engines: {node: '>=18'}
 
   keygrip@1.1.0:
     resolution: {integrity: sha512-iYSchDJ+liQ8iwbSI2QqsQOvqv58eJCEanyJPJi+Khyu8smkcKSFUCbPwzFcL7YVtZ6eONjqRX/38caJ7QjRAQ==}
@@ -12737,6 +12777,8 @@ snapshots:
       base64-js: 1.5.1
       ieee754: 1.2.1
 
+  build-url-ts@6.2.0: {}
+
   bundle-name@4.1.0:
     dependencies:
       run-applescript: 7.1.0
@@ -14885,6 +14927,8 @@ snapshots:
     dependencies:
       jwa: 1.4.2
       safe-buffer: 5.2.1
+
+  jwt-decode@4.0.0: {}
 
   keygrip@1.1.0:
     dependencies:
