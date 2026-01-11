@@ -1,2 +1,17 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<ang-header [options]="headerOptions" />
+
+<main class="container-fluid mb-auto">
+  <router-outlet></router-outlet>
+</main>
+
+<ang-footer [options]="footerOptions" />
+
+<ang-modal
+  #faqModal
+  id="faqModal"
+  [options]="faqModalOptions"
+  [body]="faqModalTemplate" />
+<ng-template #faqModalTemplate let-context>
+  <h5>FAQ section is coming soon</h5>
+</ng-template>
+<!-- <angb-color-mode class="position-fixed" style="bottom: 4em; right: 1em;" /> -->

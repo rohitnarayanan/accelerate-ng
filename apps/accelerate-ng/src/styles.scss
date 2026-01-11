@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'bootstrap/scss/bootstrap' with (
+  $success: #2d7548,
+  $info: #2a8998
+);
+
+@use '@rn-accelerate-ng/bootstrap/assets/vendor-styles';
+@use '@rn-accelerate-ng/bootstrap/assets/accelerate-styles';

@@ -4,31 +4,57 @@
   "projectType": "application",
   "prefix": "app",
   "sourceRoot": "apps/accelerate-ng/src",
-  "tags": [],
+  "tags": [
+    "type:app"
+  ],
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/accelerate-ng",
         "browser": "apps/accelerate-ng/src/main.ts",
         "tsConfig": "apps/accelerate-ng/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
+        "allowedCommonJsDependencies": [
+          "jquery",
+          "build-url-ts"
+        ],
         "assets": [
           {
             "glob": "**/*",
             "input": "apps/accelerate-ng/public"
           }
         ],
-        "styles": ["apps/accelerate-ng/src/styles.scss"]
+        "styles": [
+          "apps/accelerate-ng/src/styles.scss"
+        ],
+        "scripts": [
+          "node_modules/jquery/dist/jquery.js",
+          "node_modules/jquery-treegrid/js/jquery.treegrid.js",
+          "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+          "node_modules/bootstrap-table/dist/bootstrap-table.js",
+          "node_modules/bootstrap-table/dist/extensions/export/bootstrap-table-export.js",
+          "node_modules/bootstrap-table/dist/extensions/filter-control/bootstrap-table-filter-control.js",
+          "node_modules/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.js",
+          "node_modules/bootstrap-table/dist/extensions/print/bootstrap-table-print.js",
+          "node_modules/bootstrap-table/dist/extensions/sticky-header/bootstrap-table-sticky-header.js",
+          "node_modules/bootstrap-table/dist/extensions/toolbar/bootstrap-table-toolbar.js",
+          "node_modules/bootstrap-table/dist/extensions/treegrid/bootstrap-table-treegrid.js"
+        ],
+        "polyfills": [
+          "@angular/localize/init"
+        ]
       },
       "configurations": {
         "production": {
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "2mb",
+              "maximumError": "4mb"
             },
             {
               "type": "anyComponentStyle",

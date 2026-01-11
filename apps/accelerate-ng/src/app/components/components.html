@@ -1,0 +1,16 @@
+<ang-alert />
+
+<div class="row border-top border-primary">
+  <div class="col p-0">
+    <div class="d-flex">
+      <div
+        class="sidebar flex-shrink-0 border-end border-primary overflow-y-auto">
+        <ang-navbar [options]="navbarOptions" />
+      </div>
+
+      <div class="main-pane flex-grow-1 px-3 overflow-y-auto">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

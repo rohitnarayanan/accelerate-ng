@@ -9,9 +9,9 @@ describe('App', () => {
     }).compileComponents();
   });
 
-  it('should render title', async () => {
+  it('should render title', () => {
     const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
+    fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
       'Welcome accelerate-ng',

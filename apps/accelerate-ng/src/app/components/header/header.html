@@ -1,0 +1,149 @@
+<h4 class="page-header"><i class="bi bi-person-gear"></i>Components</h4>
+
+<ang-button
+  #myButton
+  [options]="buttonOptions"
+  (onclick)="button.updateOptions({ icon: '2-circle' })" />
+
+<h4>Button Group and Alert</h4>
+<div class="btn-group">
+  <ang-button
+    type="button"
+    class="primary"
+    label="Primary"
+    (onclick)="showAlert('primary')" />
+  <ang-button
+    type="button"
+    class="secondary"
+    label="Secondary"
+    (onclick)="showAlert('secondary')" />
+  <ang-button
+    type="button"
+    class="info"
+    label="Info"
+    (onclick)="showAlert('info')" />
+  <ang-button
+    type="button"
+    class="success"
+    label="Success"
+    (onclick)="showAlert('success')" />
+  <ang-button
+    type="button"
+    class="warning"
+    label="Warning"
+    (onclick)="showAlert('warning')" />
+  <ang-button
+    type="button"
+    class="danger"
+    label="Error"
+    (onclick)="showAlert('error')" />
+</div>
+
+<ang-alert #myAlert />
+<hr />
+
+<h4>Modal</h4>
+<ang-button
+  type="button"
+  class="primary"
+  (onclick)="showModal()"
+  label="Show Modal" />
+<ang-modal
+  #myModal
+  [options]="modalOptions"
+  [body]="modalBodyTemplate"></ang-modal>
+<ng-template #modalBodyTemplate let-context>
+  <h5>Library Works</h5>
+</ng-template>
+<hr />
+
+<h4>Table</h4>
+<ang-button
+  type="button"
+  class="primary"
+  (onclick)="showTable()"
+  label="Show Table" />
+<ang-button
+  type="button"
+  class="info"
+  additionalClasses="ms-2"
+  (onclick)="destroyTable()"
+  label="Destroy Table" />
+<ang-table #myTable [options]="tableOptions" />
+<hr />
+
+<h4>Form</h4>
+<ang-button
+  type="button"
+  class="primary"
+  (onclick)="form.show()"
+  label="Show Form" />
+<ang-button
+  type="button"
+  class="secondary"
+  additionalClasses="ms-2"
+  (onclick)="form.hide()"
+  label="Hide Form" />
+<ang-button
+  type="button"
+  class="info"
+  additionalClasses="ms-2"
+  (onclick)="form.enable()"
+  label="Enable Form" />
+<ang-button
+  type="button"
+  class="warning"
+  additionalClasses="ms-2"
+  (onclick)="form.disable()"
+  label="Disable Form" />
+<ang-button
+  type="button"
+  class="success"
+  additionalClasses="ms-2"
+  (onclick)="getFormValue()"
+  label="Get Value" />
+<ang-button
+  type="button"
+  class="danger"
+  additionalClasses="ms-2"
+  (onclick)="form.updateOptions({ layout: 'inline' })"
+  label="Update Options" />
+<p class="mb-3"></p>
+<ang-form
+  #myForm
+  [template]="formTemplate"
+  [options]="formOptions"
+  (formCancel)="form.hide()"
+  (formSubmit)="getFormValue()" />
+<ng-template #formTemplate let-context>
+  <ang-input-field type="text" name="name" [formGroup]="context.formGroup" />
+  <ang-input-field
+    type="number"
+    name="age"
+    [htmlAttributes]="{ min: '18', max: '120', step: '1' }"
+    [formGroup]="context.formGroup" />
+  <ang-input-field
+    type="date"
+    name="startDate"
+    label="Start Date"
+    [htmlAttributes]="{ min: '0' }"
+    [formGroup]="context.formGroup" />
+  <ang-input-field type="file" name="profile" [formGroup]="context.formGroup" />
+  <ang-input-field
+    type="textarea"
+    name="comments"
+    [formGroup]="context.formGroup" />
+  <ang-dropdown-field
+    name="status"
+    [formGroup]="context.formGroup"
+    [optionList]="context.statusOptions" />
+  <ang-rich-text-field
+    name="content"
+    [formGroup]="context.formGroup"
+    [styles]="{ height: '80px' }" />
+  <ang-typeahead-field
+    name="supervisor"
+    [formGroup]="context.formGroup"
+    [values]="supervisors" />
+</ng-template>
+<hr />

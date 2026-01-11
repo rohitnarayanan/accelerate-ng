@@ -1,0 +1,170 @@
+<h1>ColorMode Component</h1>
+<h2 class="mb-2">
+  <code>&lt;angb-color-mode&gt;</code> — Color scheme switcher
+</h2>
+<p class="text-body-secondary mb-4">
+  The Color Mode component lets users switch between Light, Dark, and Auto
+  themes. It can render as a floating button or a dropdown inside header/footer
+  menus. State is persisted via <code>UserSettingsService</code> under the key
+  <code>colorMode</code>.
+</p>
+
+<hr class="my-4" />
+
+<h4 id="examples" class="mt-3">Examples</h4>
+
+<h6 class="mt-3">1) Floating button (draggable)</h6>
+<p class="text-body-secondary">
+  A compact button you can position anywhere; clicking cycles the theme.
+</p>
+<ang-color-mode
+  [mode]="'button'"
+  class="position-fixed"
+  style="right: 1em"
+  [options]="{ buttonClass: 'btn-warning' }" />
+
+<details class="mb-4">
+  <summary>Show code</summary>
+  <pre class="mb-0">
+<code class="language-html">
+    &lt;angb-color-mode [mode]="'button'" [options]="" /&gt;
+</code></pre>
+</details>
+
+<h6 class="mt-4">2) Dropdown (for Header/Footer menus)</h6>
+<p class="text-body-secondary">
+  A dropdown menu entry that exposes Light, Dark, and Auto with an active check
+  mark.
+</p>
+<div class="border rounded p-3 mb-3">
+  <div class="p-2 bg-body-tertiary rounded">
+    <!-- header/footer will render this via a navbar item of type 'color-mode' -->
+    <em
+      >Rendered by Header/Footer when using a navbar item of type
+      <code>color-mode</code>.</em
+    >
+  </div>
+</div>
+
+<details class="mb-4">
+  <summary>Header usage (TypeScript)</summary>
+  <pre class="mb-0">
+        <code class="language-ts">
+        
+</code>
+</pre>
+</details>
+
+<details class="mb-4">
+  <summary>Footer usage (TypeScript)</summary>
+  <pre
+    class="mb-0"><code class="language-ts">// In a component providing FooterOptions
+</code></pre>
+</details>
+
+<hr class="my-4" />
+
+<h4 id="api" class="mt-3">API</h4>
+
+<h6>Inputs</h6>
+<table class="table table-sm table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>mode</code></td>
+      <td><code>'button' | 'menu'</code></td>
+      <td><code>'button'</code></td>
+      <td>Render style: floating button or dropdown menu entry.</td>
+    </tr>
+    <tr>
+      <td><code>[options]</code></td>
+      <td><code>ColorModeOptions</code></td>
+      <td>—</td>
+      <td>Component configuration (see below).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h6>Options: <code>ColorModeOptions</code></h6>
+<table class="table table-sm table-bordered">
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>id</code></td>
+      <td><code>string</code></td>
+      <td><code>'colorModeToggle'</code></td>
+      <td>Element id.</td>
+    </tr>
+    <tr>
+      <td><code>buttonClass</code></td>
+      <td><code>string</code></td>
+      <td><code>'btn-warning'</code></td>
+      <td>Extra classes for the floating button.</td>
+    </tr>
+    <tr>
+      <td><code>menuClass</code></td>
+      <td><code>string</code></td>
+      <td>—</td>
+      <td>Classes applied to the dropdown toggle when rendered in menus.</td>
+    </tr>
+    <tr>
+      <td><code>menu</code></td>
+      <td><code>Omit&lt;SubMenu, 'items'&gt;</code></td>
+      <td>—</td>
+      <td>
+        Menu presentation options like type (<code>'dropdown' | 'dropup'</code>)
+        and classes.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h6>Behavior</h6>
+<ul>
+  <li>
+    Available modes: <code>light</code>, <code>dark</code>, <code>auto</code>.
+  </li>
+  <li>In button mode, clicking the button cycles modes.</li>
+  <li>In menu mode, choose the desired mode from the dropdown list.</li>
+  <li>
+    Active mode is indicated with a check mark and the toggle icon updates
+    accordingly.
+  </li>
+  <li>
+    Selection is persisted via <code>UserSettingsService</code> using the key
+    <code>colorMode</code>.
+  </li>
+</ul>
+
+<hr class="my-4" />
+
+<h4 id="usage" class="mt-3">Quick Usage</h4>
+
+<h6>Direct in a template</h6>
+<pre class="mb-3">
+<code class="language-html">&lt;!-- Floating button --&gt;
+&lt;angb-color-mode [mode]="'button'" [options]="" /&gt;
+
+&lt;!-- Dropdown (e.g., place in header/footer containers) --&gt;
+&lt;angb-color-mode [mode]="'menu'" [options]="" /&gt;</code></pre>
+
+<h6>Via Header/Footer configuration (from app.ts)</h6>
+<pre class="mb-0">
+    <code class="language-ts">
+        
+    </code>
+</pre>

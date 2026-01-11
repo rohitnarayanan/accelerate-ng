@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@angular/cdk':
+        specifier: ^21.0.6
+        version: 21.0.6(@angular/common@21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2)
       '@angular/common':
         specifier: ~21.0.8
         version: 21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2)
@@ -20,15 +23,54 @@ importers:
       '@angular/forms':
         specifier: ~21.0.8
         version: 21.0.8(@angular/common@21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(@angular/platform-browser@21.0.8(@angular/common@21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2)))(rxjs@7.8.2)
+      '@angular/localize':
+        specifier: ^21.0.8
+        version: 21.0.8(@angular/compiler-cli@21.0.8(@angular/compiler@21.0.8)(typescript@5.9.3))(@angular/compiler@21.0.8)
       '@angular/platform-browser':
         specifier: ~21.0.8
         version: 21.0.8(@angular/common@21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))
       '@angular/router':
         specifier: ~21.0.8
         version: 21.0.8(@angular/common@21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(@angular/platform-browser@21.0.8(@angular/common@21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2)))(rxjs@7.8.2)
+      '@ng-bootstrap/ng-bootstrap':
+        specifier: ^20.0.0
+        version: 20.0.0(@angular/common@21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(@angular/forms@21.0.8(@angular/common@21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(@angular/platform-browser@21.0.8(@angular/common@21.0.8(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2)))(rxjs@7.8.2))(@angular/localize@21.0.8(@angular/compiler-cli@21.0.8(@angular/compiler@21.0.8)(typescript@5.9.3))(@angular/compiler@21.0.8))(@popperjs/core@2.11.8)(rxjs@7.8.2)
+      bootstrap:
+        specifier: ^5.3.8
+        version: 5.3.8(@popperjs/core@2.11.8)
+      bootstrap-icons:
+        specifier: ^1.13.1
+        version: 1.13.1
+      bootstrap-table:
+        specifier: ^1.26.0
+        version: 1.26.0(jquery@3.7.1)
+      build-url-ts:
+        specifier: ^6.2.0
+        version: 6.2.0
+      jquery:
+        specifier: ^3.7.1
+        version: 3.7.1
+      jquery-treegrid:
+        specifier: ^0.3.0
+        version: 0.3.0
+      jwt-decode:
+        specifier: ^4.0.0
+        version: 4.0.0
+      lodash-es:
+        specifier: ^4.17.22
+        version: 4.17.22
+      ngx-quill:
+        specifier: ^30.0.1
+        version: 30.0.1(@angular/core@21.0.8(@angular/compiler@21.0.8)(rxjs@7.8.2))(quill@2.0.3)(rxjs@7.8.2)
+      quill:
+        specifier: ^2.0.3
+        version: 2.0.3
       rxjs:
         specifier: ~7.8.2
         version: 7.8.2
+      uuid:
+        specifier: ^13.0.0
+        version: 13.0.0
     devDependencies:
       '@angular-devkit/core':
         specifier: ~21.0.5
@@ -147,6 +189,30 @@ importers:
       vitest:
         specifier: ^4.0.8
         version: 4.0.16(@types/node@25.0.6)(jiti@2.6.1)(jsdom@27.4.0)(less@4.5.1)(sass-embedded@1.97.2)(sass@1.97.2)(terser@5.44.1)(yaml@2.8.2)
+
+  apps/accelerate-ng:
+    devDependencies:
+      '@rn-accelerate-ng/auth':
+        specifier: workspace:*
+        version: link:../../libs/accelerate-ng-auth
+      '@rn-accelerate-ng/bootstrap':
+        specifier: workspace:*
+        version: link:../../libs/accelerate-ng-bootstrap
+      '@rn-accelerate-ng/core':
+        specifier: workspace:*
+        version: link:../../libs/accelerate-ng-core
+      '@rn-accelerate-ng/http':
+        specifier: workspace:*
+        version: link:../../libs/accelerate-ng-http
+      '@types/bootstrap':
+        specifier: ^5.2.10
+        version: 5.2.10
+      '@types/jquery':
+        specifier: ^3.5.33
+        version: 3.5.33
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
 
   libs/accelerate-ng-auth:
     devDependencies:
