@@ -2,6 +2,7 @@
 import { CommonModule } from '@angular/common';
 import {
   Component,
+  computed,
   effect,
   EventEmitter,
   input,
@@ -41,6 +42,19 @@ export class ButtonComponent
   label: InputSignal<string | undefined> = input<string | undefined>(undefined);
   additionalClasses: InputSignal<string | undefined> = input<string>();
   disabled: InputSignal<boolean> = input<boolean>(false);
+
+  readonly isDisabled = computed(() => {
+    console.error('ButtonComponent.isDisabled evaluated');
+    if (this.config.disabled === undefined) {
+      return false;
+    }
+
+    if (typeof this.config.disabled === 'function') {
+      return (this.config.disabled as () => boolean)();
+    }
+
+    return !!this.config.disabled;
+  });
 
   /** Output events **/
   @Output() onclick = new EventEmitter(); // named differently to avoid conflict with actual click event
@@ -88,18 +102,6 @@ export class ButtonComponent
     ]
       .join(' ')
       .trim();
-  }
-
-  protected isDisabled(): boolean {
-    if (this.config.disabled === undefined) {
-      return false;
-    }
-
-    if (typeof this.config.disabled === 'function') {
-      return (this.config.disabled as () => boolean)();
-    }
-
-    return !!this.config.disabled;
   }
 
   protected handleClick(): boolean {
